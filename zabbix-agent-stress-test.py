@@ -90,7 +90,7 @@ def worker():
         end = timer()
         rate = 1/(end-start)
         rate_avg = (rate_avg + rate)/2
-        #print "Success: %d\tError: %d\tCurrent speed: %.2f qps\tAvg speed: %.2f qps" % (success, error, rate, rate_avg)
+        #print "Success: %d\tError: %d\tCurrent rate: %.2f qps\tAvg rate: %.2f qps" % (success, error, rate, rate_avg)
 
 def main(argv):
     global zabbix_agent_host
@@ -151,9 +151,9 @@ Example: ./zabbix_agent_stress_test -s 127.0.0.1 -p 10050 -k agent.ping
     try:
         while True:
             time.sleep(1)
-            print "Success: %d\tErrors: %d\tAvg speed: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, timer()-startg)
+            print "Success: %d\tErrors: %d\tAvg rate: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, timer()-startg)
     except KeyboardInterrupt:
-        print "Success: %d\tErrors: %d\tAvg speed: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, timer()-startg)
+        print "Success: %d\tErrors: %d\tAvg rate: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, timer()-startg)
         sys.exit(0)
 
 if __name__ == "__main__":
