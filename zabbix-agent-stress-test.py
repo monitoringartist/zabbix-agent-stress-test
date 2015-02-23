@@ -147,13 +147,15 @@ Example: ./zabbix_agent_stress_test -s 127.0.0.1 -p 10050 -k agent.ping
         t.start()
 
     import time
-    startg = timer()
-    try:
+    startg = timer()    
+    try:        
         while True:
             time.sleep(1)
             print "Success: %d\tErrors: %d\tAvg rate: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, timer()-startg)
     except KeyboardInterrupt:
-        print "Success: %d\tErrors: %d\tAvg rate: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, timer()-startg)
+        total_time = timer()-startg
+        print "\nSuccess: %d\tErrors: %d\tAvg rate: %.2f qps\tExecution time: %.2f sec" % (success, error, rate_avg*threads, total_time)
+        print "Avg rate based on total execution time and success connections: %.2f qps" % (success/total_time) 
         sys.exit(0)
 
 if __name__ == "__main__":

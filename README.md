@@ -84,8 +84,8 @@ execution of IOPs is needed for this item:
     
 # Conclusion  
     
-Zabbix Agent can handle ~3k-8k requests per second for in memory items.
-If you need shell execution for your items, then it's ~0.5k requests per second.
+Zabbix Agent can handle ~3k requests per second for in memory items.
+If you need shell execution for items, then it's ~0.5k requests per second.
     
     
     
