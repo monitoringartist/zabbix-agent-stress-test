@@ -15,8 +15,34 @@ high rate, but it can be usefull for rest of them (0.1%).
  
 Stress test code can be more precise and also async => provided results are only informative. 
 Stress test is only for zabbix-agent passive mode and maybe active mode can provide  
-better performance (IDNK).   
+better performance (IDNK).
 
+# Manual
+
+    [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -h
+    Usage:
+    ./zabbix-agent-stress-test.py [-h] [-s <host name or IP>] [-p <port>] -k <key>
+    
+    Utility for stress testing of zabbix_agent - how many queries per second can be reached for defined item key.
+    
+    Options:
+      -s, --host <host name or IP>
+        Specify host name or IP address of a host. Default value is 127.0.0.1
+    
+      -p, --port <port>
+        Specify port number of agent running on the host. Default value is 10050
+    
+      -k, --key <key of metric>
+        Specify key of item to retrieve value for
+    
+      -t, --threads <number of thread>
+        Specify number of worker threads
+    
+      -h, --help
+        Display help information
+    
+    Example: ./zabbix-agent-stress-test.py -s 127.0.0.1 -p 10050 -k agent.ping
+   
 # Stress test examples
 
 Some examples for Zabbix agent 2.4.3 on localhost and StartAgents=4:

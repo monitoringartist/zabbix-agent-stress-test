@@ -125,7 +125,7 @@ Options:
   -h, --help
     Display help information
 
-Example: ./zabbix_agent_stress_test -s 127.0.0.1 -p 10050 -k agent.ping
+Example: ./zabbix-agent-stress-test.py -s 127.0.0.1 -p 10050 -k agent.ping
           """
           sys.exit()
        elif opt in ("-s", "--host"):
