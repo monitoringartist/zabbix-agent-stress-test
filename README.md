@@ -91,7 +91,7 @@ Expected ~400 qps value, because 4 agents threads are started and execution need
     ...
 
 Probably maximum qps value, when 4 agents threads are started - item key is agent.ping, so no subshell 
-executions or IOPs areS needed for this item:
+executions or IOPs are needed for this item:
     
     [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "agent.ping" -t 4
     Warning: you are starting more threads, than your system has available CPU cores (2)!
