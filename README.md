@@ -113,7 +113,6 @@ executions or IOPs are needed for this item:
 Zabbix Agent can handle ~3k requests per second for in memory items.
 If you need shell execution for items, then it's ~0.5k requests per second.
     
-    
-    
+# Similar projects
 
- 
+- better implementation in Go: https://github.com/cavaliercoder/zabbix_agent_bench
