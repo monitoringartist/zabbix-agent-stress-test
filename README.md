@@ -17,7 +17,8 @@ Stress test code can be more precise and also async => provided results are only
 Stress test is only for zabbix-agent passive mode and maybe active mode can provide  
 better performance (IDNK).
 
-# Manual
+Manual
+======
 
     [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -h
     Usage:
@@ -43,7 +44,8 @@ better performance (IDNK).
     
     Example: ./zabbix-agent-stress-test.py -s 127.0.0.1 -p 10050 -k agent.ping
    
-# Stress test examples
+Stress test examples
+====================
 
 Some examples for Zabbix agent 2.4.3 on localhost and StartAgents=4:
 
@@ -108,11 +110,19 @@ executions or IOPs are needed for this item:
     Success: 33344  Errors: 0       Avg rate: 3814.14 qps  Execution time: 10.01 sec
     ...
     
-# Conclusion  
+Conclusion
+==========  
     
 Zabbix Agent can handle ~3k requests per second for in memory items.
-If you need shell execution for items, then it's ~0.5k requests per second.
+If you need shell execution for items, then it's ~0.5k requests per second. 
+(Tested on 2.1GHz CPUs).
     
-# Similar projects
+Similar projects
+================
 
 - better implementation in Go: https://github.com/cavaliercoder/zabbix_agent_bench
+
+Author
+======
+ 
+[Devops Monitoring zExpert](http://www.jangaraj.com), who loves monitoring systems, which start with letter Z. Those are Zabbix and Zenoss. [LinkedIn] (http://uk.linkedin.com/in/jangaraj/).
