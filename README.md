@@ -1,21 +1,20 @@
 Zabbix Agent Stress Test
 ========================
 
-Script for zabbix agent stress testing - how many queries per second can 
+Script for Zabbix Agent stress testing - how many queries per second can 
 be reached for defined item key from zabbix-agent in passive mode?
 
-It depends on:
+[![Paypal donate button](http://jangaraj.com/img/github-donate-button02.png)]
+(https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8LB6J222WRUZ4)
+
+Zabbix Agent performance depends on:
 * zabbix-agent config: how many passive threads are started - config option StartAgents
 * item, items can be slower, if they need subshell or IOPs operation, e.g. UserParameters
 * HW (CPU, network, ...)
  
-I was (am) looking some monitoring solution, which can "collect" 10k values per second 
-(it's very specific device with 10k metrics). 99.9% of monitoring population doesn't need so 
-high rate, but it can be usefull for rest of them (0.1%).
- 
-Stress test code can be more precise and also async => provided results are only informative. 
-Stress test is only for zabbix-agent passive mode and maybe active mode can provide  
-better performance (IDNK).
+Stress test code can be more precise and also async => provided results are only 
+informative. Stress test is only for zabbix-agent in passive mode and maybe 
+active mode can provide better performance (IDNK).
 
 Manual
 ======
@@ -124,5 +123,11 @@ Similar projects
 
 Author
 ======
- 
-[Devops Monitoring zExpert](http://www.jangaraj.com), who loves monitoring systems, which start with letter Z. Those are Zabbix and Zenoss. [LinkedIn] (http://uk.linkedin.com/in/jangaraj/).
+
+[Devops Monitoring zExpert](http://www.jangaraj.com), who loves monitoring 
+systems, which start with letter Z. Those are Zabbix and Zenoss.
+
+Professional monitoring services:
+
+[![Monitoring Artist](http://monitoringartist.com/img/github-monitoring-artist-logo.jpg)]
+(http://www.monitoringartist.com)
