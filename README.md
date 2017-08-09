@@ -4,8 +4,7 @@ Zabbix Agent Stress Test
 Script for Zabbix Agent stress testing - how many queries per second can 
 be reached for defined item key from zabbix-agent in passive mode?
 
-[![Paypal donate button](http://jangaraj.com/img/github-donate-button02.png)]
-(https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8LB6J222WRUZ4)
+[![Paypal donate button](http://jangaraj.com/img/github-donate-button02.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8LB6J222WRUZ4)
 
 Zabbix Agent performance depends on:
 * zabbix-agent config: how many passive threads are started - config option StartAgents
@@ -19,7 +18,7 @@ active mode can provide better performance (IDNK).
 Manual
 ======
 
-    [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -h
+    $ ./zabbix-agent-stress-test.py -h
     Usage:
     ./zabbix-agent-stress-test.py [-h] [-s <host name or IP>] [-p <port>] -k <key>
     
@@ -50,7 +49,7 @@ Some examples for Zabbix agent 2.4.3 on localhost and StartAgents=4:
 
 Expected ~4 qps, because 4 agents threads are started and every execution needs 1 sec (sleep 1):
 
-    [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "system.run[sleep 1]" -t 20
+    $ ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "system.run[sleep 1]" -t 20
     Warning: you are starting more threads, than your system has available CPU cores (2)!
     Starting 20 threads, host: 127.0.0.1:10050, key: system.run[sleep 1]
     Success: 4      Errors: 0       Avg rate: 18.55 qps    Execution time: 1.00 sec
@@ -72,7 +71,7 @@ Expected ~4 qps, because 4 agents threads are started and every execution needs 
     
 Expected ~400 qps value, because 4 agents threads are started and execution needs ~0.01 sec (echo 1):
 
-    [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "system.run[echo 1]" -t 20
+    $ ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "system.run[echo 1]" -t 20
     Warning: you are starting more threads, than your system has available CPU cores (2)!
     Starting 20 threads, host: 127.0.0.1:10050, key: system.run[echo 1]
     Success: 596    Errors: 0       Avg rate: 525.18 qps   Execution time: 1.00 sec
@@ -94,7 +93,7 @@ Expected ~400 qps value, because 4 agents threads are started and execution need
 Probably maximum qps value, when 4 agents threads are started - item key is agent.ping, so no subshell 
 executions or IOPs are needed for this item:
     
-    [root@zabbixagent zabbix-agent-stress-test]# ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "agent.ping" -t 4
+    $ ./zabbix-agent-stress-test.py -s 127.0.0.1 -k "agent.ping" -t 4
     Warning: you are starting more threads, than your system has available CPU cores (2)!
     Starting 4 threads, host: 127.0.0.1:10050, key: agent.ping
     Success: 3354   Errors: 0       Avg rate: 3406.18 qps  Execution time: 1.00 sec
@@ -119,7 +118,7 @@ If you need shell execution for items, then it's ~0.5k requests per second.
 Similar projects
 ================
 
-- better implementation in Go: https://github.com/cavaliercoder/zabbix_agent_bench
+Better implementation in Go: https://github.com/cavaliercoder/zabbix_agent_bench
 
 # Author
 
@@ -129,9 +128,9 @@ Kubernetes, ECS, AWS, Google GCP, Terraform, Lambda, Zabbix, Grafana, Elasticsea
 Kibana, Prometheus, Sysdig, ...
 
 Summary:
-* 1000+ [GitHub](https://github.com/monitoringartist/) stars
-* 6000+ [Grafana dashboard](https://grafana.net/monitoringartist) downloads
-* 800 000+ [Docker image](https://hub.docker.com/u/monitoringartist/) pulls
+* 2000+ [GitHub](https://github.com/monitoringartist/) stars
+* 10 000+ [Grafana dashboard](https://grafana.net/monitoringartist) downloads
+* 1 000 000+ [Docker image](https://hub.docker.com/u/monitoringartist/) pulls
 
 Professional devops / monitoring / consulting services:
 
